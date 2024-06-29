@@ -1,88 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 </head>
+
 <body>
-<main>
-  <div class="left">
+  <main>
+    <div class="container">
 
-    <div class="head">
-      <h3>Mortgage Calculator</h3>
-    <p>Clear All</p>
-  </div>
-  <form class="form">
-    <div class="m-amount">
-      <label for="amt">Mortgage Amount</label>
-      <input type="text" name="number" id="amt">
-      <span>euro</span>
-      <p class="error">This field is required</p>
-    </div>
-    <div class="m-calculate">
+      <div class="left">
 
-      <div class="m-term">
-        <label for="term">Mortgage Term</label>
-        <input type="text" id="term">
-        <span>years</span>
-        <p class="error">This field is required</p>
-      </div>
-      <div class="m-interest">
-        <label for="rate">Interest Rate</label>
-        <input type="text" id="rate">
-        <span>%</span>
-        <p class="error">This field is required</p>
-      </div>
-    </div>
-    <div class="m-type">
-      <label>Mortgage Type</label>
-      <div class="input-group">
-        <input type="radio" name="type" id="repay">
-        <label for="repay">Repayment</label>
-      </div>
-      <div class="input-group">
-        <input type="radio" name="type" id="interest">
-        <label for="interest">Interest Only</label>
-      </div>
-      <p class="error">This field is required</p>
-    </div>
-    <input type="submit" value="Calculate Repayments">
-  </form>
-</div>
-  <div class="right">
+        <div class="head">
+          <h2>Mortgage Calculator</h2>
+          <small id="clear">Clear All</small>
+        </div>
+        <form class="form">
+          <div class="m-amount flex">
+            <label for="amt">Mortgage Amount</label>
+            <div class="group">
+              <input type="text" name="number" id="amt" class="input">
+              <span class="title l-side">&pound;</span>
+            </div>
+            <small class="error">This field is required</small>
+          </div>
+          <div class="m-calculate">
 
-    <!-- Empty results start -->
-    <div class="empty-res">
-      <h3>Results shown here</h3>
-      <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
-    </div>
-    
-    <!-- Empty results end -->
-    
-    <!-- Completed results start -->
-    <div class="show-res">
-      <h3>Your results</h3>
-      <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
-    </div>
-    <div class="calc-res">
-      <div class="calc-month">
-        <small>Your monthly repayments</small>
-        <h2 class="monthly"></h2>
+            <div class="m-term flex">
+              <label for="term">Mortgage Term</label>
+              <div class="group r-side">
+                <input type="text" id="term" class="input">
+                <span class="title r-side">years</span>
+              </div>
+              <small class="error">This field is required</small>
+            </div>
+            <div class="m-interest flex">
+              <label for="rate">Interest Rate</label>
+              <div class="group r-side">
+                <input type="text" id="rate" class="input">
+                <span class="title r-side">%</span>
+              </div>
+              <small class="error">This field is required</small>
+            </div>
+          </div>
+          <div class="m-type flex">
+            <label>Mortgage Type</label>
+            <div class="input-group">
+              <input type="radio" name="type" id="repay" value="repayment" class="custom-radio">
+              <label for="repay" class="custom-radio-label">Repayment</label>
+            </div>
+            <div class="input-group">
+              <input type="radio" name="type" id="interest" value="interest" class="custom-radio">
+              <label for="interest" class="custom-radio-label">Interest Only</label>
+            </div>
+            <small class="radio-error hidden">This field is required</small>
+          </div>
+          <button id="submit">
+            <img src="assets/images/icon-calculator.svg" alt="">
+            <p>Calculate payments</p>
+          </button>
+        </form>
       </div>
-      <div class="calc-total">
-        <small>Total you'll repay over the term</small>
-        <h2 class="total"></h2>
+      <div class="right">
+
+        <!-- Empty results start -->
+        <div class="empty-res">
+          <img src="assets/images/illustration-empty.svg" width="180" alt="">
+          <h3>Results shown here</h3>
+          <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
+        </div>
+
+        <!-- Empty results end -->
+
+        <!-- Completed results start -->
+        <div class="total-res">
+
+          <!-- <div class="show-res"> -->
+            <h3>Your results</h3>
+            <p>Your results are shown below based on the information you provided. To adjust the results, edit the form
+              and click “calculate repayments” again.</p>
+          <!-- </div> -->
+          <div class="calc-res">
+            <div class="calc-month">
+              <small>Your monthly repayments</small>
+              <h2 class="monthly"></h2>
+            </div>
+            <hr>
+            <div class="calc-total">
+              <small>Total you'll repay over the term</small>
+              <h2 class="total"></h2>
+            </div>
+          </div>
+
+        </div>
+        <!-- Completed results end -->
       </div>
-      
+
     </div>
-      <!-- Completed results end -->
-    </div>
-    
   </main>
-  
+
+  <script src="index.js"></script>
 </body>
+
 </html>

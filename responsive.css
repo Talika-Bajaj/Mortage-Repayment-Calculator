@@ -31,7 +31,7 @@
 
     /* form */
     .m-calculate {
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 48.5% 48.5%;
         gap: 12px;
     }
 }

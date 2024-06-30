@@ -29,14 +29,15 @@ body {
     align-items: center;
 }
 
+/* main */
 .container {
     background-color: var(--White);
     display: grid;
     grid-template-columns: 100%;
-    /* width: 90vw; */
     margin: 0;
 }
 
+/* left */
 .left {
     background-color: var(--White);
     padding: 35px 30px;
@@ -63,6 +64,7 @@ body {
     color: var(--Slate_700);
 }
 
+/* form */
 .form {
     display: flex;
     flex-direction: column;
@@ -87,13 +89,8 @@ body {
     border: none;
     width: 100%;
     cursor: pointer;
-    transition: all 0.3s ease-out;
     outline: none;
     font-weight: 700;
-}
-
-.input:hover {
-    border-color: var(--Slate_900);
 }
 
 .input:focus .title {
@@ -107,11 +104,16 @@ body {
     width: 100%;
     border: 1px solid var(--Slate_500);
     border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.group:hover {
+    border-color: var(--Slate_900);
 }
 
 .group.r-side {
     flex-direction: row;
-    /* right: 1px; */
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -124,15 +126,11 @@ body {
 }
 
 .title.l-side {
-    /* top: 1px; */
-    /* left: 1px; */
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
 .title.r-side {
-    /* top: 1px; */
-    /* left: 1px; */
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -168,7 +166,7 @@ body {
 }
 
 .input-group.selected {
-    background-color: hsl(61deg 100% 96.05%) ;
+    background-color: hsl(61deg 100% 96.05%);
 }
 
 .custom-radio-label {
@@ -182,7 +180,8 @@ body {
     transition: all 0.3s ease-out;
 }
 
-.custom-radio , .custom-radio-label {
+.custom-radio,
+.custom-radio-label {
     display: flex;
     align-items: center;
     margin: 5px;
@@ -193,7 +192,7 @@ body {
     position: relative;
 }
 
-.custom-radio + .custom-radio-label:before {
+.custom-radio+.custom-radio-label:before {
     content: '';
     background: #fff;
     border: 2px solid var(--Slate_900);
@@ -206,23 +205,23 @@ body {
     text-align: center;
 }
 
-.custom-radio:checked + .custom-radio-label:before {
+.custom-radio:checked+.custom-radio-label:before {
     background-color: var(--Lime);
     border: 2px solid var(--Lime);
-    box-shadow: inset 0px 0px 0px 4px #fff;
+    box-shadow: inset 0px 0px 0px 3px #fff;
 }
 
-.custom-radio + .custom-radio-label:before {
+.custom-radio+.custom-radio-label:before {
     border-radius: 50%;
 }
 
-.custom-radio:focus + .custom-radio label {
-    outline: 1px solid #ddd; /* focus style */
-  }
+.custom-radio:focus+.custom-radio label {
+    outline: 1px solid #ddd;
+}
 
 .hidden {
     display: none;
-} 
+}
 
 #submit {
     display: flex;
@@ -237,14 +236,16 @@ body {
     border: none;
     border-radius: 25px;
     cursor: pointer;
+    margin-top: 15px;
     transition: all 0.3s ease-out;
 }
 
 #submit:hover {
     background-color: hsl(61deg 78.36% 64.99%);
 }
+
+/* right */
 .right {
-    /* border: 2px solid red; */
     background-color: var(--Slate_900);
     color: var(--White);
     display: grid;
@@ -259,7 +260,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* grid-template-columns: 100%; */
     gap: 18px;
 }
 
@@ -269,30 +269,37 @@ body {
 }
 
 .total-res {
-    /* display: grid; */
     flex-direction: column;
     gap: 18px;
     text-align: left;
     display: none;
 }
 
-.total-res p, .calc-res small {
+.total-res p {
     color: var(--Slate_500);
+    font-weight: 500;
 }
 
 .calc-res {
     background-color: hsl(202deg 54.67% 7.34%);
-    padding: 20px 25px;
+    padding: 25px 30px;
     border-radius: 6px;
     border-top: 3px solid var(--Lime);
     display: grid;
     grid-template-columns: 100%;
     gap: 22px;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
-.monthly {
-    font-size: 38px;
+#pay-month,
+#pay-total {
+    font-size: 15px;
+    color: var(--Slate_500);
+    font-weight: 600;
+}
+
+#monthly {
+    font-size: 48px;
     font-weight: 600;
     color: var(--Lime);
 }
@@ -303,14 +310,16 @@ hr {
     background-color: var(--Slate_900);
 }
 
-.total {
-    font-size: 34px;
+
+#total {
+    font-size: 28px;
     font-weight: 600;
     color: var(--White);
 }
 
 
-.calc-month, .calc-total {
+.calc-month,
+.calc-total {
     display: grid;
     grid-template-columns: 100%;
     gap: 15px;

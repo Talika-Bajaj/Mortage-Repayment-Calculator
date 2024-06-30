@@ -17,22 +17,22 @@
     <div class="container">
 
       <div class="left">
-
         <div class="head">
           <h2>Mortgage Calculator</h2>
           <small id="clear">Clear All</small>
         </div>
+
         <form class="form">
           <div class="m-amount flex">
             <label for="amt">Mortgage Amount</label>
             <div class="group">
-              <input type="text" name="number" id="amt" class="input">
+              <input type="text" name="number" id="amt" class="input" oninput="updateTextView(this)">
               <span class="title l-side">&pound;</span>
             </div>
             <small class="error">This field is required</small>
           </div>
-          <div class="m-calculate">
 
+          <div class="m-calculate">
             <div class="m-term flex">
               <label for="term">Mortgage Term</label>
               <div class="group r-side">
@@ -41,6 +41,7 @@
               </div>
               <small class="error">This field is required</small>
             </div>
+
             <div class="m-interest flex">
               <label for="rate">Interest Rate</label>
               <div class="group r-side">
@@ -50,59 +51,59 @@
               <small class="error">This field is required</small>
             </div>
           </div>
+
           <div class="m-type flex">
             <label>Mortgage Type</label>
             <div class="input-group">
               <input type="radio" name="type" id="repay" value="repayment" class="custom-radio">
               <label for="repay" class="custom-radio-label">Repayment</label>
             </div>
+
             <div class="input-group">
               <input type="radio" name="type" id="interest" value="interest" class="custom-radio">
               <label for="interest" class="custom-radio-label">Interest Only</label>
             </div>
+
             <small class="radio-error hidden">This field is required</small>
           </div>
+
           <button id="submit">
             <img src="assets/images/icon-calculator.svg" alt="">
             <p>Calculate payments</p>
           </button>
         </form>
       </div>
-      <div class="right">
 
+      <div class="right">
         <!-- Empty results start -->
         <div class="empty-res">
           <img src="assets/images/illustration-empty.svg" width="180" alt="">
           <h3>Results shown here</h3>
           <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
         </div>
-
         <!-- Empty results end -->
 
         <!-- Completed results start -->
         <div class="total-res">
-
-          <!-- <div class="show-res"> -->
-            <h3>Your results</h3>
-            <p>Your results are shown below based on the information you provided. To adjust the results, edit the form
-              and click “calculate repayments” again.</p>
-          <!-- </div> -->
+          <h3>Your results</h3>
+          <p>Your results are shown below based on the information you provided. To adjust the results, edit the form
+            and click “calculate repayments” again.</p>
           <div class="calc-res">
             <div class="calc-month">
-              <small>Your monthly repayments</small>
-              <h2 class="monthly"></h2>
+              <p id="pay-month"></p>
+              <h2 id="monthly"></h2>
             </div>
+
             <hr>
+
             <div class="calc-total">
-              <small>Total you'll repay over the term</small>
-              <h2 class="total"></h2>
+              <p id="pay-total"></p>
+              <h2 id="total"></h2>
             </div>
           </div>
-
         </div>
-        <!-- Completed results end -->
       </div>
-
+      <!-- Completed results end -->
     </div>
   </main>
 

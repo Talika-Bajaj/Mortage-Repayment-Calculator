@@ -1,54 +1,65 @@
-@media screen and (width>= 550px) {
+@media screen and (width>=550px) {
+
+    /* main */
     .container {
         margin: 40px auto;
         width: 90vw;
         border-radius: 18px;
     }
 
+    /* left */
     .left {
         border-top-left-radius: 18px;
         border-top-right-radius: 18px;
     }
 
+    /* form */
     .head {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
 
+    /* right */
     .right {
         border-bottom-left-radius: 18px;
         border-bottom-right-radius: 18px;
     }
 }
 
-@media screen and (width>= 800px) {
+@media screen and (width>=800px) {
+
+    /* form */
     .m-calculate {
-        /* grid-template-columns: 227px 227px; */
         grid-template-columns: 50% 50%;
         gap: 12px;
     }
 }
 
-@media screen and (width>= 1060px) {
+@media screen and (width>=1060px) {
+
+    /* main */
     .container {
         grid-template-columns: 50% 50%;
         width: 980px;
     }
 
+    /* left */
     .left {
         border-top-left-radius: 18px;
         border-bottom-left-radius: 18px;
     }
 
+    /* form */
+    #submit {
+        justify-content: flex-start;
+        width: 300px;
+    }
+
+    /* right */
     .right {
         border-top-right-radius: 18px;
         border-bottom-right-radius: 18px;
         border-bottom-left-radius: 110px;
-    }
-
-    #submit {
-        justify-content: flex-start;
-        width: 300px;
     }
 }
